@@ -1,4 +1,5 @@
 use clap::Parser;
+use plotters::prelude::*;
 mod oiler;
 
 /// Simple program to greet a person
@@ -29,5 +30,8 @@ fn main() {
     
     println!("{}", c);
 
+    let root = BitMapBackend::new("plotters-doc-data/5.png", (640, 480)).into_drawing_area();
+    root.fill(&WHITE);
+    let root = root.margin(10, 10, 10, 10);
 }
 
